@@ -2,12 +2,14 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+# More info at http://bundler.io/gemfile.html
+
 source 'https://rubygems.org'
 
 chef_version = ENV.key?('CHEF_VERSION') ? ENV['CHEF_VERSION'] : nil
 
 group :doc do
-  gem 'yard', '~> 0.8'
+  gem 'yard', '~> 0.8.7'
 end
 
 group :test do
@@ -29,12 +31,19 @@ group :unit do
 end
 
 group :integration do
-  gem 'vagrant-wrapper', '~> 2.0'
   gem 'test-kitchen', '~> 1.2'
+end
+
+group :integration_docker do
+  gem 'kitchen-docker', '~> 2.3'
+end
+
+group :integration_vagrant do
+  gem 'vagrant-wrapper', '~> 2.0'
   gem 'kitchen-vagrant', '~> 0.15'
 end
 
-group :integration, :integration_cloud do
+group :integration_cloud do
   gem 'kitchen-ec2', '~> 0.8'
   gem 'kitchen-digitalocean', '~> 0.8'
 end

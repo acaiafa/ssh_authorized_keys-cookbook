@@ -66,6 +66,7 @@ key2_priv = [
 user 'bob' do
   supports manage_home: true
   home '/home/bob'
+  password 'iKKjjIW9HYPRDtybAQE6'
 end
 
 group 'bob' do
@@ -75,6 +76,7 @@ end
 user 'bob2' do
   supports manage_home: true
   home '/home/bob2'
+  password 'WpEvau6A8ETvjTUSI7AV'
 end
 
 group 'bob2' do
